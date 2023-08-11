@@ -25,7 +25,7 @@ import java.util.regex.Pattern;
 import org.sonar.api.utils.log.Logger;
 import org.sonar.api.utils.log.Loggers;
 
-public class FlutterAnalyzerReportParser implements DartAnalyzerReportParser {
+public class FvmFlutterAnalyzerReportParser implements DartAnalyzerReportParser {
     private static final Logger LOGGER = Loggers.get(DartAnalyzerSensor.class);
 
     @Override

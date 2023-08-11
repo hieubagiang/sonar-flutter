@@ -45,7 +45,9 @@ public abstract class AnalyzerExecutable {
         MANUAL,
         DARTANALYZER,
         DART,
-        FLUTTER;
+        FLUTTER,
+        FVM_FLUTTER,
+        ;
 
         public static final Mode defaultMode = DETECT;
     }
@@ -171,6 +173,10 @@ public abstract class AnalyzerExecutable {
                 if (outputMode.equals(AnalyzerOutput.Mode.DETECT)) {
                     LOGGER.warn("Manual test report is configured without output mode, this may not work! Defaulting to legacy output.");
                     outputMode = AnalyzerOutput.Mode.LEGACY;
+                }else if (outputMode.equals(AnalyzerOutput.Mode.FLUTTER_ANALYZER)) {
+                    LOGGER.warn("Manual test report is configured with flutter analyzer output mode");
+                    LOGGER.warn("Output of command: flutter analyze  --no-pub > analyzer.output");
+                    outputMode = AnalyzerOutput.Mode.FLUTTER_ANALYZER;
                 }
                 return new ManualAnalyzerExecutable(sensorContext, outputMode);
             case DART:

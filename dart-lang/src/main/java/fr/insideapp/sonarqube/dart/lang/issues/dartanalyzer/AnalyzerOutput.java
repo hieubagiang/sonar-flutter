@@ -24,7 +24,9 @@ public class AnalyzerOutput {
     public enum Mode {
         DETECT,
         MACHINE,
-        LEGACY;
+        LEGACY,
+        FLUTTER_ANALYZER
+        ;
 
         public static final Mode defaultMode = DETECT;
     }

@@ -72,6 +72,9 @@ public class DartAnalyzerSensor implements Sensor {
                 parser = output.getMode().equals(AnalyzerOutput.Mode.MACHINE)
                         ? new DartAnalyzerMachineReportParser() : new DartAnalyzerLegacyReportParser();
             }
+            if(output.getMode().equals(AnalyzerOutput.Mode.FLUTTER_ANALYZER)){
+                parser = new FvmFlutterAnalyzerReportParser();
+            }
 
             final List<DartAnalyzerReportIssue> issues = parser.parse(output.getContent());
 

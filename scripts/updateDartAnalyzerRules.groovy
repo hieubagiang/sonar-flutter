@@ -46,7 +46,7 @@ String.mixin(ConsoleString)
  */
 def parseRuleDescription(String ruleKey) {
 
-    def http = new HTTPBuilder('https://dart-lang.github.io/linter/lints/' + ruleKey + '.html')
+    def http = new HTTPBuilder('https://dart.dev/tools/linter-rules/' + ruleKey)
     def html = http.get([:])
 
     def root = html."**".find { it.name() == "SECTION" }

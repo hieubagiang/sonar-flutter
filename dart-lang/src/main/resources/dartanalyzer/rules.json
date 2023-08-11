@@ -2163,7 +2163,7 @@
         "key": "invalid_literal_annotation",
         "name": "Invalid literal annotation",
         "severity": "MINOR",
-        "description": "The analyzer produces this diagnostic when the [literal][[meta-literal]]\nannotation is applied to anything other than a const constructor.\n @see https://dart.dev/tools/diagnostic-messages#invalid_literal_annotation",
+        "description": "The analyzer produces this diagnostic when the literal\nannotation is applied to anything other than a const constructor.\n @see https://dart.dev/tools/diagnostic-messages#invalid_literal_annotation",
         "type": "BUG",
         "debt": "5min",
         "active": true
@@ -2220,6 +2220,15 @@
         "description": "The analyzer produces this diagnostic when a type parameter is used as a\ntype argument in a list, map, or set literal that is prefixed by const.\nThis isn\u2019t allowed because the value of the type parameter (the actual type\nthat will be used at runtime) can\u2019t be known at compile time.\n @see https://dart.dev/tools/diagnostic-messages#invalid_type_argument_in_const_literal",
         "type": "BUG",
         "debt": "5min",
+        "active": true
+    },
+    {
+        "key": "invalid_visible_outside_template_annotation",
+        "name": "Invalid visible outside template annotation",
+        "severity": "MAJOR",
+        "description": "The analyzer produces this diagnostic when the @visibleOutsideTemplate\nannotation is used incorrectly. This annotation is only meant to annotate\nmembers of a class, enum, or mixin that has the @visibleForTemplate\nannotation, to opt those members out of the visibility restrictions that\n@visibleForTemplate imposes.\n @see https://dart.dev/tools/diagnostic-messages#invalid_visible_outside_template_annotation",
+        "type": "BUG",
+        "debt": "15min",
         "active": true
     },
     {
@@ -2390,6 +2399,15 @@
         "severity": "MINOR",
         "description": "The analyzer produces this diagnostic when an inherited member (method,\ngetter, setter, or operator) is referenced using super, but there\u2019s no\nmember with that name in the superclass chain.\n @see https://dart.dev/tools/diagnostic-messages#undefined_super_member",
         "type": "BUG",
+        "debt": "5min",
+        "active": true
+    },
+    {
+        "key": "unnecessary_final",
+        "name": "Unnecessary final",
+        "severity": "MINOR",
+        "description": "The analyzer produces this diagnostic when either a field initializing\nparameter or a super parameter in a constructor has the keyword final.\nIn both cases the keyword is unnecessary because the parameter is\nimplicitly final.\n @see https://dart.dev/tools/diagnostic-messages#unnecessary_final",
+        "type": "CODE_SMELL",
         "debt": "5min",
         "active": true
     },
